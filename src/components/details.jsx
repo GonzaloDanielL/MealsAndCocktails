@@ -9,6 +9,7 @@ export function Details(props) {
     const [data, seData] = useState([]);
     let name, img, keyid, youtube, ytlinknew, retorno;
 
+
     async function GetDato(id) {
         let url, tipo;
 
@@ -25,9 +26,9 @@ export function Details(props) {
             url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
         }
 
-        await fetch(url)
-            .then((Response) => Response.json())
-            .then((data) => seData(data[tipo][0]))
+        const res = await fetch(url)
+        const data = await res.json()
+        seData(data[tipo][0])
     }
 
     if (props.title == "Meals") {
@@ -90,7 +91,7 @@ export function Details(props) {
                         <div className="flex flex-row gap-10 max-md:flex-col max-w-screen-xl">
                             <div className="flex-auto ">
                                 <h2 className="text-amber-400 h-fit text-4xl">Youtube</h2>
-                                <iframe className="mt-4 rounded-xl w-full h-72  max-md:h-56"  src={ytlinknew + "?autohide=2"} title="YouTube video player" alt={ytlinknew}></iframe>
+                                <iframe className="mt-4 rounded-xl w-full h-72  max-md:h-56" src={ytlinknew + "?autohide=2"} title="YouTube video player" alt={ytlinknew}></iframe>
                             </div>
                             <div className="basis-3/5">
                                 <h2 className="text-amber-400 h-fit text-4xl">Instructions</h2>

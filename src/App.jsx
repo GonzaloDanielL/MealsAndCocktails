@@ -25,25 +25,23 @@ function App() {
   const datamealcategories = mealcategory.read();
   const datacocktailcategory = cocktailCategory.read();
 
-
   return (
     <>
       <div className='font-itim bg-amber-700/20 h-screen'>
         <Routes>
           <Route path="/" exact element={<MainPage meal={datameal.meals[0].strMealThumb} cocktail={datacocktail.drinks[0].strDrinkThumb} />} />
 
-          <Route path="/listmeals" element={<ListData title="Meals" list={datameals.meals} categories={datamealcategories.categories}/>}/>
+          <Route path="/listmeals" element={<ListData title="Meals" list={datameals.meals} categories={datamealcategories.categories} />} />
 
-          <Route path="/listcocktails" element={<ListData title="Cocktails" list={datacocktails.drinks} categories={datacocktailcategory.drinks}/>}/>
+          <Route path="/listcocktails" element={<ListData title="Cocktails" list={datacocktails.drinks} categories={datacocktailcategory.drinks} />} />
 
-          <Route path='/mealdetails/:id' element={<Details title="Meals"/>}/>
+          <Route path='/mealdetails/:id' element={<Details title="Meals" />} />
 
-          <Route path='/cocktaildetails/:id' element={<Details title="Cocktails"/>}/>
+          <Route path='/cocktaildetails/:id' element={<Details title="Cocktails" />} />
         </Routes>
       </div>
     </>
   )
 }
-
 
 export default App

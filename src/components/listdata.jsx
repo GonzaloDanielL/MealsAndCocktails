@@ -9,28 +9,28 @@ export function ListData(props) {
 
     async function changeCategories(name) {
         let url;
-        if (props.title == "Meals"){
+        if (props.title == "Meals") {
             url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`
-        }else if (props.title == "Cocktails"){
+        } else if (props.title == "Cocktails") {
             url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${name}`
         }
 
-        await fetch(url)
-            .then((response) => response.json())
-            .then((data) => setData(props.title == "Meals"?data.meals : data.drinks))
+        const res = await fetch(url)
+        const data = await res.json()
+        setData(props.title == "Meals" ? data.meals : data.drinks)
     }
 
     async function changeSearch(name) {
         let url;
-        if (props.title == "Meals"){
+        if (props.title == "Meals") {
             url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
-        }else if (props.title == "Cocktails"){
+        } else if (props.title == "Cocktails") {
             url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`
         }
 
-        await fetch(url)
-            .then((response) => response.json())
-            .then((data) => setData(props.title == "Meals"?data.meals : data.drinks))
+        const res = await fetch(url)
+        const data = await res.json()
+        setData(props.title == "Meals" ? data.meals : data.drinks)
     }
 
     if (props.title == "Meals") {
@@ -39,7 +39,7 @@ export function ListData(props) {
         keyid = "idMeal";
         details = "mealdetails";
 
-    } else if (props.title == "Cocktails"){
+    } else if (props.title == "Cocktails") {
         name = "strDrink";
         img = "strDrinkThumb";
         keyid = "idDrink";
