@@ -75,27 +75,27 @@ export function Details(props) {
                 <div className="overflow-auto h-3/4 mt-6 no-scrollbar  bg-amber-400/20 p-5 rounded-xl">
 
                     <div key={data[keyid]} className="flex flex-wrap gap-8 justify-center">
-                        <div className="flex flex-row gap-10 max-md:flex-col max-w-screen-xl">
+                        <div className="flex flex-row gap-10 w-full max-md:flex-col max-w-screen-xl">
                             <div className="flex-auto">
                                 <h2 className="text-amber-400 h-fit text-4xl">{data[name]}</h2>
-                                <img className="w-96 h-96 rounded-xl mt-4 max-md:h-72" src={data[img]} alt="" />
+                                <img className="w-full rounded-xl mt-4 max-md:h-72" src={data[img]} alt="" />
                             </div>
-                            <div className="basis-3/4">
+                            <div className="flex-auto">
                                 <h2 className="text-amber-400 h-fit text-4xl">Ingredients</h2>
-                                <div className="mt-4 flex flex-wrap gap-7  justify-start">
+                                <div className="mt-4 flex flex-wrap gap-7  justify-start rounded-xl p-5 bg-amber-400/20">
                                     <OrderList datos={data} />
                                 </div>
                             </div>
                         </div>
 
-                        <div className="flex flex-row gap-10 max-md:flex-col max-w-screen-xl">
-                            <div className="flex-auto ">
+                        <div className="flex flex-row gap-10 w-full  max-md:flex-col max-w-screen-xl">
+                            <div className="flex-auto">
                                 <h2 className="text-amber-400 h-fit text-4xl">Youtube</h2>
-                                <iframe className="mt-4 rounded-xl w-full h-72  max-md:h-56" src={ytlinknew + "?autohide=2"} title="YouTube video player" alt={ytlinknew}></iframe>
+                                <iframe className="mt-4 rounded-xl w-96 h-72  max-md:h-56" src={ytlinknew + "?autohide=2"} title="YouTube video player" alt={ytlinknew}></iframe>
                             </div>
-                            <div className="basis-3/5">
+                            <div className="flex-auto">
                                 <h2 className="text-amber-400 h-fit text-4xl">Instructions</h2>
-                                <p className="text-amber-500 text-lg mt-4">{data.strInstructions}</p>
+                                <p className="text-amber-500 text-lg mt-4 rounded-xl p-5 bg-amber-400/20">{data.strInstructions}</p>
                             </div>
                         </div>
                     </div>

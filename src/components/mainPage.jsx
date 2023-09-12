@@ -8,12 +8,12 @@ export function MainPage(props) {
             <div className='text-amber-500 flex flex-row gap-40 max-md:gap-14 max-sm:flex-col'>
                 <Link to="/listmeals" className="bg-amber-400/20 rounded-xl p-5  transition-all duration-300 linear  hover:bg-amber-400/40 hover:scale-105">
                     <img className='w-60 h-60 rounded-xl' src={props.meal} alt="" />
-                    <h2 className='text-center mt-4 text-4xl'>Meals</h2>
+                    <h2 className='text-center mt-4 text-4xl'>Meals🥞</h2>
                 </Link>
                 <Link to="/listcocktails" className="bg-amber-400/20 rounded-xl p-5
                     transition-all duration-300 linear  hover:bg-amber-400/40 hover:scale-105">
                     <img className='w-60 h-60 rounded-xl' src={props.cocktail} alt="" />
-                    <h2 className='text-center mt-4 text-4xl'>Cocktails</h2>
+                    <h2 className='text-center mt-4 text-4xl'>Cocktails🍸</h2>
                 </Link>
             </div>
         </div>
