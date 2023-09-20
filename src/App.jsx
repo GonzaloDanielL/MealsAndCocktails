@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <div className='font-itim bg-amber-700/20 h-screen'>
+      <div className='font-itim bg-gradient-to-b from-amber-600/30 to-amber-600/20 h-screen'>
         <Routes>
           <Route path="/" exact element={<MainPage meal={datameal.meals[0].strMealThumb} cocktail={datacocktail.drinks[0].strDrinkThumb} />} />
 

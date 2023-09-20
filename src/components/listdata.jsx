@@ -75,7 +75,7 @@ export function ListData(props) {
             <div className="overflow-auto h-3/4 mt-6 no-scrollbar max-lg:h-2/3 max-md:h-3/5">
                 <div className="flex flex-wrap gap-8 justify-center">
                     {data?.map((item) => (
-                        <Link to={`/${details}/${item[keyid]}`} className="w-72 bg-amber-400/20 p-4 flex flex-col items-center rounded-xl transition-all duration-300 linear  hover:bg-amber-400/40" key={item[keyid]}>
+                        <Link to={`/${details}/${item[keyid]}`} className="w-72 shadow-xl bg-amber-400/20 p-4 flex flex-col items-center rounded-xl transition-all duration-300 linear  hover:bg-amber-400/40" key={item[keyid]}>
                             <img className='w-64 h-64 rounded-xl' src={item[img]} alt="" />
                             <h3 className="text-amber-500 text-center mt-4 text-2xl break-words">{item[name]}</h3>
                         </Link>

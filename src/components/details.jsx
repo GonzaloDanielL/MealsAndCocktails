@@ -53,12 +53,14 @@ export function Details(props) {
 
     if (data.length != 0) {
         /* Reparar link de youtube*/
+
         if (data[youtube] != null) {
             let ytlink = data[youtube].replace('watch?v=', '').split('/');
             ytlinknew = [ytlink[0], ytlink[1], ytlink[2], ...["embed", ytlink[3]]].join("/")
         } else {
-            ytlinknew = "No hay video..."
+            ytlinknew = false;
         }
+
         return (
             <div className="h-full flex flex-col pl-36 pr-36 pt-5 max-lg:pr-24 max-lg:pl-24 max-md:pr-10 max-md:pl-10 max-sm:pl-4 max-sm:pr-4">
                 <div className="flex flex-row w-full mb-4
@@ -82,7 +84,7 @@ export function Details(props) {
                             </div>
                             <div className="flex-auto">
                                 <h2 className="text-amber-400 h-fit text-4xl">Ingredients</h2>
-                                <div className="mt-4 flex flex-wrap gap-7  justify-start rounded-xl p-5 bg-amber-400/20">
+                                <div className="mt-4 flex flex-wrap gap-10 justify-center rounded-xl p-5 bg-amber-400/20">
                                     <OrderList datos={data} />
                                 </div>
                             </div>
@@ -91,11 +93,14 @@ export function Details(props) {
                         <div className="flex flex-row gap-10 w-full  max-md:flex-col max-w-screen-xl">
                             <div className="flex-auto">
                                 <h2 className="text-amber-400 h-fit text-4xl">Youtube</h2>
-                                <iframe className="mt-4 rounded-xl w-96 h-72  max-md:h-56" src={ytlinknew + "?autohide=2"} title="YouTube video player" alt={ytlinknew}></iframe>
+                                {ytlinknew == false? <div className="mt-4 rounded-xl w-96 h-72  max-md:h-56 max-md:w-full text-amber-500 text-xl">No hay video para esta receta</div> : <iframe className="mt-4 rounded-xl w-96 h-72  max-md:h-56 max-md:w-full"
+                                 src={ytlinknew + "?autohide=2"} 
+                                 title="YouTube video player" alt={ytlinknew}></iframe>  }
+                                
                             </div>
                             <div className="flex-auto">
                                 <h2 className="text-amber-400 h-fit text-4xl">Instructions</h2>
-                                <p className="text-amber-500 text-lg mt-4 rounded-xl p-5 bg-amber-400/20">{data.strInstructions}</p>
+                                <p className="text-amber-500 text-xl mt-4 rounded-xl p-5 bg-amber-400/20">{data.strInstructions}</p>
                             </div>
                         </div>
                     </div>

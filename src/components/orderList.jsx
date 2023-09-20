@@ -18,8 +18,8 @@ export function OrderList(datos) {
                 break;
 
             } else {
-                listI.push(<div key={num} className=" flex flex-col gap-2 items-center">
-                    <img className="w-24 h-25" src={imgI} alt="no hay" />
+                listI.push(<div key={num} className="flex flex-col gap-2 items-center">
+                    <img className="w-32 h-32" src={imgI} alt="no hay" />
                     <h3 className="text-amber-500 text-center  text-2xl break-words">{ingredient}</h3>
                 </div>);
                 num += 1;
