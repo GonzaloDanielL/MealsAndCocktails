@@ -18,9 +18,9 @@ export function OrderList(datos) {
                 break;
 
             } else {
-                listI.push(<div key={num} className="flex flex-col gap-2 items-center">
-                    <img className="w-32 h-32" src={imgI} alt="no hay" />
-                    <h3 className="text-amber-500 text-center  text-2xl break-words">{ingredient}</h3>
+                listI.push(<div key={num} className="flex w-32 flex-col gap-2 items-center max-sm:w-24">
+                    <img className="w-full" src={imgI} alt="no hay" />
+                    <h3 className="text-amber-400 text-center text-2xl break-words">{ingredient}</h3>
                 </div>);
                 num += 1;
             }

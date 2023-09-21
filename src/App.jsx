@@ -26,8 +26,24 @@ function App() {
   const datacocktailcategory = cocktailCategory.read();
 
   return (
-    <>
-      <div className='font-itim bg-gradient-to-b from-amber-600/30 to-amber-600/20 h-screen'>
+    <div>
+      <div className='-z-10 fixed top-0 left-0 h-screen w-auto opacity-70 flex flex-col overflow-hidden gap-2 p-2 bg-amber-950'>
+
+        <div className='h-1/2 -translate-x-full animate-fondomeals flex-auto w-full flex flex-row gap-2'>
+          {datameals.meals?.map((imgs) => (
+            <img key={imgs.idMeal} className='rounded-lg w-80' src={imgs.strMealThumb} alt="" />
+          ))}
+        </div>
+
+        <div className='h-1/2 -translate-x-full animate-fondodrinks flex-auto flex flex-row bottom-0 gap-2'>
+          {datacocktails.drinks?.map((imgs) => (
+            <img key={imgs.idDrink} className='rounded-lg w-80' src={imgs.strDrinkThumb} alt="" />
+          ))}
+        </div>
+
+      </div>
+
+      <div className='font-itim z-10 h-screen'>
         <Routes>
           <Route path="/" exact element={<MainPage meal={datameal.meals[0].strMealThumb} cocktail={datacocktail.drinks[0].strDrinkThumb} />} />
 
@@ -40,7 +56,7 @@ function App() {
           <Route path='/cocktaildetails/:id' element={<Details title="Cocktails" />} />
         </Routes>
       </div>
-    </>
+    </div>
   )
 }
 
