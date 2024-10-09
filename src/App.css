@@ -1,0 +1,382 @@
+:root {
+    --fondo-2: #242527;
+    --fondo-1: #1f2022;
+    --color-1: #fcb500;
+    --color-2: #edf3f9;
+}
+
+
+body {
+    background-color: var(--fondo-1);
+}
+
+body::-webkit-scrollbar {
+    width: 15px;
+    /* Ancho de la barra de desplazamiento */
+    height: 12px;
+    /* Alto de la barra de desplazamiento (para scroll horizontal) */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-1);
+    /* Color del thumb (la parte que se mueve) */
+    border: 0;
+    /* Espacio alrededor del thumb */
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--fondo-1);
+    /* Color de la pista de la barra de desplazamiento */
+}
+
+
+.fondo-imagen {
+    position: fixed;
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+}
+
+.mensaje-carga-error{
+    margin: 40px;
+    color: var(--color-1);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/*############ Menu principal ############*/
+.menu-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding-bottom: 60px;
+    height: 100vh;
+}
+
+.menu-principal-titulo {
+    color: var(--color-1);
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    width: fit-content;
+    font-size: 3.5rem;
+}
+
+.navegacion-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+
+    & .navegacion-1-link {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+        width: 350px;
+        padding: 30px;
+        background-color: var(--fondo-1);
+        border: none;
+        outline: none;
+        border-radius: 60px;
+        text-decoration: none;
+
+        transition: background-color 0.2s ease;
+
+        & img {
+            border-radius: 40px;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.2S ease;
+        }
+
+        & h2 {
+            color: var(--color-1);
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+            transition: all 0.2S ease;
+            font-size: 2rem;
+        }
+    }
+
+    & .navegacion-1-link:hover {
+        background-color: var(--fondo-2);
+
+    }
+}
+
+
+/*######## contenido ########*/
+.contenedor-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contenedor-contenido-navegacion {
+    padding: 4%;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    transition: all 0.2s ease;
+
+    & .contenido-navegacion-titulo {
+        flex: auto;
+
+        & a {
+            width: fit-content;
+            color: var(--color-1);
+            font-family: "Merriweather", serif;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 3.5rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+
+    }
+
+    & .contenedor-contenido-navegacion-busqueda {
+        height: fit-content;
+        padding-bottom: 7px;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+
+        & label {
+            color: var(--color-1);
+            font-size: 1.5rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+
+        & input,
+        select {
+            -webkit-appearance: none;
+            /* Safari, Chrome */
+            -moz-appearance: none;
+            /* Firefox */
+            appearance: none;
+            /* Estándar */
+            background: none;
+            /* Elimina la flecha predeterminada */
+            color: var(--color-2);
+            width: 200px;
+            border: none;
+            outline: none;
+            text-decoration: none;
+            padding: 20px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            font-size: 1.2rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            border-radius: 40px;
+            background-color: var(--fondo-1);
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        & input:hover, select:hover {
+            transform: scale(1.01);
+            background-color: var(--fondo-2);
+        }
+    }
+}
+
+.lista-datos-grid {
+    padding: 4%;
+    padding-top: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+            minmax(300px,
+                1fr));
+    gap: 40px;
+
+    & .lista-datos-grid-item {
+        max-width: 400px;
+        text-decoration: none;
+        padding: 25px;
+        background-color: var(--fondo-1);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: all 0.2s ease;
+
+        & img {
+            border-radius: 10px;
+            width: 100%;
+        }
+
+
+
+        & h3 {
+            text-align: center;
+            font-family: "Merriweather", serif;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 1.8rem;
+            color: var(--color-2);
+            transition: all 0.2s ease;
+        }
+
+
+
+    }
+
+    & .lista-datos-grid-item:hover {
+        background-color: var(--fondo-2);
+        transform: scale(1.05);
+
+        & h3 {
+            color: var(--color-1);
+        }
+    }
+}
+
+
+/*######## receta ########*/
+.navegacion-receta {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    padding: 3%;
+    padding: 4%;
+    padding-top: 30px;
+    padding-bottom: 25px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+    & .navegacion-receta-titulo {
+        flex: auto;
+
+        & a{
+            text-decoration: none;
+            color: var(--color-1);
+            display: flex;
+            font-family: "Merriweather", serif;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 3.5rem;
+            width: fit-content;
+        }
+    }
+
+    & .link-youtube {
+        text-decoration: none;
+        color: var(--color-2);
+        font-size: 1.2rem;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        display: flex;
+        gap: 8px;
+        transition: color 0.2s ease;
+    }
+
+    & .link-youtube:hover {
+        color: var(--color-1);
+    }
+}
+
+.contenedor-receta {
+    padding: 4%;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    & .contenido-receta-1 {
+        background-color: var(--fondo-1);
+        padding: 4%;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        border-radius: 30px;
+
+        & img {
+            width: 40%;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+
+        & .contenedor-ingredientes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,
+                    minmax(150px,
+                        1fr));
+            gap: 20px;
+            height: fit-content;
+            width: 100%;
+
+            & .ingrediente-item {
+                background-color: var(--fondo-2);
+                padding: 20px;
+                border-radius: 20px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+
+
+                & img {
+                    width: 100%;
+                    max-width: 200px;
+                    object-fit: fill;
+                }
+
+                & h3 {
+                    color: var(--color-1);
+                    font-size: 1.3rem;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    font-style: normal;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+
+    & .contenido-receta-2 {
+        /*         background-color: var(--fondo-1);
+        padding: 4%; */
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        border-radius: 30px;
+
+        & p {
+            padding-left: 4%;
+            padding-right: 4%;
+            color: var(--color-2);
+            font-size: 1.1rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    }
+}
