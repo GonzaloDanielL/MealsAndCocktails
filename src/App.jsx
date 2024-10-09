@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { MenuPrincipal } from './pages/Menu.jsx'
 import { ListaDatos } from './pages/ContenidoList.jsx'
 import { RecetaGuia } from './pages/Receta.jsx'
-import fondoImagen from './fondo.png'
+import fondoImagen from '/fondo.png'
 
 const PageTransition = ({ children }) => (
   <motion.div
